@@ -8,6 +8,11 @@
   roles:
     - role: python2_install
 
+- name: Harden all systems
+  hosts: k8s-cluster
+  roles:
+    - ansible-hardening
+
 - import_playbook: 'kubespray/cluster.yml'
   tags: kubespray
 
